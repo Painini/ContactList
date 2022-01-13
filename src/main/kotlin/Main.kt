@@ -1,46 +1,58 @@
-class Contact {
-    var forename = ""
-    var surname = ""
-    var contactNumber = 0
-    var digitilMailAdress = ""
+fun main(args: Array<String>) {
+    var menuHandler = MenuHandler()
+    var contactHandler = ContactHandler()
 
-}
+    menuHandler.Start()
 
+    var flag = true
 
+    while (flag) {
 
-class ContactHandler {
+        flag = false
+        var input = readln()
 
-
-
-    var contact1 = Contact()
-    var contact2 = Contact()
-    var contact3 = Contact()
-    var contact4 = Contact()
-    var contact5 = Contact()
-    var contact6 = Contact()
-    var contact7 = Contact()
-    var contact8 = Contact()
-    var contact9 = Contact()
-    var contact10 = Contact()
-
-    var contacts = arrayOf(contact1, contact2, contact3, contact4, contact5, contact6, contact7, contact8, contact9, contact10)
-
-    fun AddContact(contactNumber: Int){
-
+        if (input == "H") {
+            menuHandler.MainMenu()
+            break
+        }
+        else{
+            println("Please type in capital letter [H].")
+            flag = true
+        }
     }
 
-}
+    flag = true
+
+    while (flag){
+
+        var input = readln()
+
+        if (input == "A")
+        {
+            println("Forename:")
+            var forename = readln()
+
+            println("surname:")
+            var surname = readln()
+
+            println("Phonenumber:")
+            var contactNumber = readln()
+            var contactNumberInt = contactNumber.toInt()
 
 
+            //VARFÖR FUNKAR DET INTE ATT LÄGGA TILL EN KONTAKT VAFAN
+            contactHandler.AddContact(1, forename, surname, contactNumberInt)
+            println("Contact has been added! Press [H] to return to the contact list!")
 
-fun main(args: Array<String>) {
-    println("Hello World!")
-    println(3 + 3)
+            input = readln()
+            if (input == "H")
+                menuHandler.MainMenu()
 
-    var contact1 = Contact()
-    contact1.forename = "Tim"
-    contact1.surname = "Löfstedt"
-    contact1.contactNumber = 1111
+
+        }
+
+
+    }
 
 
     //println("Program arguments: ${args.joinToString()}")
