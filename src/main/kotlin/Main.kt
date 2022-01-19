@@ -20,7 +20,6 @@ fun main(args: Array<String>) {
             flag = true
         }
     }
-
     flag = true
 
     while (flag){
@@ -40,18 +39,15 @@ fun main(args: Array<String>) {
             var contactNumberInt = contactNumber.toInt()
 
 
-            //VARFÖR FUNKAR DET INTE ATT LÄGGA TILL EN KONTAKT VAFAN
-            contactHandler.AddContact(1, forename, surname, contactNumberInt)
+            //VARFÖR FUNKAR DET INTE ATT LÄGGA TILL EN KONTAKT
+            contactHandler.AddContact(forename, surname, contactNumberInt)
             println("Contact has been added! Press [H] to return to the contact list!")
 
             input = readln()
             if (input == "H")
                 menuHandler.MainMenu()
 
-
         }
-
-
     }
 
 
