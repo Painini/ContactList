@@ -12,7 +12,7 @@ fun main(args: Array<String>) {
         var input = readln()
 
         if (input == "H") {
-            menuHandler.MainMenu()
+            menuHandler.MainMenu(contactHandler)
             break
         }
         else{
@@ -36,20 +36,60 @@ fun main(args: Array<String>) {
 
             println("Phonenumber:")
             var contactNumber = readln()
-            var contactNumberInt = contactNumber.toInt()
 
+            println("Mail Adress:")
+            var mailAdress = readln()
 
-            //VARFÖR FUNKAR DET INTE ATT LÄGGA TILL EN KONTAKT
-            contactHandler.AddContact(forename, surname, contactNumberInt)
+            contactHandler.AddContact(forename, surname, contactNumber, mailAdress)
             println("Contact has been added! Press [H] to return to the contact list!")
 
             input = readln()
             if (input == "H")
-                menuHandler.MainMenu()
+                menuHandler.MainMenu(contactHandler)
+
+        }
+        if (input == "B")
+        {
+            println("Type in the list number of the person you wish to be removed!")
+
+            var listNumber = readln()
+            var listNumberInt = listNumber.toInt()
+            contactHandler.RemoveContact(listNumberInt)
+
+            println("Contact has been removed! Press [H] to return to the contact list!")
+
+            input = readln()
+            if (input == "H")
+                menuHandler.MainMenu(contactHandler)
+
+        }
+        if (input == "C")
+        {
+            println("Type in the list number of the person you wish to be edited!")
+            var listNumber = readln()
+            var listNumberInt = listNumber.toInt()
+
+            println("New Forename:")
+            var forename = readln()
+
+            println("New surname:")
+            var surname = readln()
+
+            println("New Phonenumber:")
+            var contactNumber = readln()
+
+            println("Mail Adress:")
+            var mailAdress = readln()
+
+            contactHandler.EditContact(listNumberInt, forename, surname, contactNumber, mailAdress)
+
+            println("Contact has been Edited! Press [H] to return to the contact list!")
+
+            input = readln()
+            if (input == "H")
+                menuHandler.MainMenu(contactHandler)
 
         }
     }
-
-
     //println("Program arguments: ${args.joinToString()}")
 }

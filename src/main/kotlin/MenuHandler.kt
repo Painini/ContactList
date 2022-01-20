@@ -1,15 +1,16 @@
 class MenuHandler {
 
-    var contactHandler = ContactHandler()
+
 
     fun Start(){
-        println("yo yo yo madafakas. Start the program by typing [H] into the window!")
+        println("Start the program by typing [H] into the window!")
     }
 
-    fun MainMenu(){
-        println("This is your contact list:")
+    fun MainMenu(contactHandler: ContactHandler){
+        println("This is your contact list: (If empty, you have no friends)")
 
-      contactHandler.Print()
+
+        contactHandler.Print()
 
         println("Type in [A] to add a contact!")
         println("Type in [B] to remove a contact!")
