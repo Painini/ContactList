@@ -34,7 +34,7 @@ fun main(args: Array<String>) {
             println("surname:")
             var surname = readln()
 
-            println("Phonenumber:")
+            println("Phone number:")
             var contactNumber = readln()
 
             println("Mail Adress:")
@@ -48,6 +48,7 @@ fun main(args: Array<String>) {
                 menuHandler.MainMenu(contactHandler)
 
         }
+
         if (input == "B")
         {
             println("Type in the list number of the person you wish to be removed!")
@@ -75,7 +76,7 @@ fun main(args: Array<String>) {
             println("New surname:")
             var surname = readln()
 
-            println("New Phonenumber:")
+            println("New Phone number:")
             var contactNumber = readln()
 
             println("Mail Adress:")
@@ -89,6 +90,17 @@ fun main(args: Array<String>) {
             if (input == "H")
                 menuHandler.MainMenu(contactHandler)
 
+        }
+
+        if (input == "D")
+        {
+            contactHandler.AlphabeticalSort()
+
+            println("Contact list has been alphabetically sorted! Press [H] to return to the contact list!")
+
+            input = readln()
+            if (input == "H")
+                menuHandler.MainMenu(contactHandler)
         }
     }
     //println("Program arguments: ${args.joinToString()}")

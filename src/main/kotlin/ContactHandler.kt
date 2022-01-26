@@ -1,3 +1,7 @@
+
+import java.util.*
+import kotlin.collections.ArrayList
+
 class ContactHandler () {
 
 
@@ -19,13 +23,20 @@ class ContactHandler () {
 
     }
 
+    fun AlphabeticalSort()
+    {
+        contactList = ArrayList<Contact>(contactList.sortedWith(compareBy({it.surname})))
+
+    }
+
     fun Print()
     {
         var listNumber = 1
         for (Contacts in contactList)
         {
-            println("listNumber: " + listNumber + "  ")
-            println("{" + " " + Contacts.forename + " " + Contacts.surname + " " + Contacts.contactNumber + " " + Contacts.mailAdress + " " + "}")
+            println("----------")
+            println("List Number: " + listNumber + "  ")
+            println("Name: "+Contacts.forename + " " + Contacts.surname + " | " + "Contact Information: " + Contacts.contactNumber + " " + Contacts.mailAdress)
             listNumber++
         }
 

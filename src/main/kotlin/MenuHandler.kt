@@ -13,8 +13,14 @@ class MenuHandler {
         contactHandler.Print()
 
         println("Type in [A] to add a contact!")
-        println("Type in [B] to remove a contact!")
-        println("Type in [C] to edit a contact!")
+
+        if (contactHandler.contactList.isNotEmpty())
+        {
+            println("Type in [B] to remove a contact!")
+            println("Type in [C] to edit a contact!")
+            println("Type in [D] to alphabetically sort the contact list!")
+        }
+
 
     }
 
