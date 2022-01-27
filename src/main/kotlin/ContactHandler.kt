@@ -4,7 +4,6 @@ import kotlin.collections.ArrayList
 
 class ContactHandler () {
 
-
     var contactList = ArrayList<Contact>()
 
     fun AddContact(forename: String, surname: String, contactNumber: String, mailAdress: String) {
@@ -20,13 +19,11 @@ class ContactHandler () {
         contactList[listNumber - 1].surname = surname
         contactList[listNumber - 1].contactNumber = contactNumber
         contactList[listNumber - 1].mailAdress = mailAdress
-
     }
 
     fun AlphabeticalSort()
     {
         contactList = ArrayList<Contact>(contactList.sortedWith(compareBy({it.surname})))
-
     }
 
     fun Print()

@@ -1,10 +1,13 @@
 fun main(args: Array<String>) {
-    var menuHandler = MenuHandler()
-    var contactHandler = ContactHandler()
+    val menuHandler = MenuHandler()
+    val contactHandler = ContactHandler()
+    val fileHandler = FileHandler()
 
     menuHandler.Start()
 
     var flag = true
+
+    fileHandler.WriteToFile(contactHandler.contactList)
 
     while (flag) {
 
@@ -42,6 +45,8 @@ fun main(args: Array<String>) {
 
             contactHandler.AddContact(forename, surname, contactNumber, mailAdress)
             println("Contact has been added! Press [H] to return to the contact list!")
+            fileHandler.WriteToFile(contactHandler.contactList)
+
 
             input = readln()
             if (input == "H")
@@ -58,6 +63,8 @@ fun main(args: Array<String>) {
             contactHandler.RemoveContact(listNumberInt)
 
             println("Contact has been removed! Press [H] to return to the contact list!")
+            fileHandler.WriteToFile(contactHandler.contactList)
+
 
             input = readln()
             if (input == "H")
@@ -85,6 +92,8 @@ fun main(args: Array<String>) {
             contactHandler.EditContact(listNumberInt, forename, surname, contactNumber, mailAdress)
 
             println("Contact has been Edited! Press [H] to return to the contact list!")
+            fileHandler.WriteToFile(contactHandler.contactList)
+
 
             input = readln()
             if (input == "H")
@@ -97,6 +106,8 @@ fun main(args: Array<String>) {
             contactHandler.AlphabeticalSort()
 
             println("Contact list has been alphabetically sorted! Press [H] to return to the contact list!")
+            fileHandler.WriteToFile(contactHandler.contactList)
+
 
             input = readln()
             if (input == "H")
