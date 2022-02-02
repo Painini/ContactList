@@ -1,8 +1,6 @@
-
-import java.util.*
 import kotlin.collections.ArrayList
 
-/* This class handles my contacts. It's very convenient. More info below.
+/* This class handles contacts. More info below.
 
  */
 class ContactHandler () {

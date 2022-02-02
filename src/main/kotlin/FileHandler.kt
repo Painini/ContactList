@@ -27,7 +27,7 @@ class FileHandler {
     }
 
 
-    /* WORK IN PROGRESS */
+    /* Reads from file and adds information into the contact list using inputStream and a bufferedReader that reads the textfile by line. */
     fun ReadFromFile(contactHandler: ContactHandler)
     {
         val inputStream = File("contactlist.txt").inputStream()
@@ -37,15 +37,8 @@ class FileHandler {
 
         for (line in lineList)
         {
-
             var a: ArrayList<String> = ArrayList<String>(line.split("%"))
             contactHandler.AddContact(a[0], a[1], a[2], a[3])
-
-
-
         }
-
-
-
     }
 }
