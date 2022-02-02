@@ -35,6 +35,17 @@ class FileHandler {
 
         inputStream.bufferedReader().forEachLine { lineList.add(it) }
 
+        for (line in lineList)
+        {
+
+            var a: ArrayList<String> = ArrayList<String>(line.split("%"))
+            contactHandler.AddContact(a[0], a[1], a[2], a[3])
+
+
+
+        }
+
+
 
     }
 }

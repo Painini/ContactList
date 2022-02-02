@@ -24,6 +24,7 @@ class MenuHandler {
             println("Type in [B] to remove a contact!")
             println("Type in [C] to edit a contact!")
             println("Type in [D] to alphabetically sort the contact list!")
+            println("Type in [F] to close the program!")
         }
     }
 

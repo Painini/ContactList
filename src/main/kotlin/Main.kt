@@ -5,6 +5,7 @@ fun main(args: Array<String>) {
 
     menuHandler.Start()
 
+    fileHandler.ReadFromFile(contactHandler = contactHandler)
     var flag = true
 
     fileHandler.WriteToFile(contactHandler.contactList)
@@ -32,8 +33,10 @@ fun main(args: Array<String>) {
 
         var input = readln()
 
+        /* If the user inputs A into the console, it will prompt them to enter details for a new contact to be added */
         if (input == "A")
         {
+            println("You have chosen to add a new contact! Please type in their details below:")
             println("Forename:")
             var forename = readln()
 
@@ -57,7 +60,7 @@ fun main(args: Array<String>) {
 
         }
 
-        if (input == "B")
+        else if (input == "B")
         {
             println("Type in the list number of the person you wish to be removed!")
 
@@ -74,7 +77,8 @@ fun main(args: Array<String>) {
                 menuHandler.MainMenu(contactHandler)
 
         }
-        if (input == "C")
+
+        else if (input == "C")
         {
             println("Type in the list number of the person you wish to be edited!")
             var listNumber = readln()
@@ -104,7 +108,7 @@ fun main(args: Array<String>) {
 
         }
 
-        if (input == "D")
+        else if (input == "D")
         {
             contactHandler.AlphabeticalSort()
 
@@ -115,6 +119,19 @@ fun main(args: Array<String>) {
             input = readln()
             if (input == "H")
                 menuHandler.MainMenu(contactHandler)
+        }
+
+
+        /* This input closes the program */
+        else if (input == "F")
+        {
+            println("Have a wonderful day! c:")
+            break
+        }
+
+        else
+        {
+            println("Please type in a valid option!")
         }
     }
     //println("Program arguments: ${args.joinToString()}")
