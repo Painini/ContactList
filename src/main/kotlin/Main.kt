@@ -9,6 +9,7 @@ fun main(args: Array<String>) {
 
     fileHandler.WriteToFile(contactHandler.contactList)
 
+    /* Denna while-loop ser till att användaren skriver in "H" i konsollen innan programmet startar på riktigt */
     while (flag) {
 
         flag = false
@@ -25,6 +26,8 @@ fun main(args: Array<String>) {
     }
     flag = true
 
+
+    /* Denna while-loop tar hand om all input från användare */
     while (flag){
 
         var input = readln()
@@ -34,7 +37,7 @@ fun main(args: Array<String>) {
             println("Forename:")
             var forename = readln()
 
-            println("surname:")
+            println("Surname:")
             var surname = readln()
 
             println("Phone number:")
@@ -80,7 +83,7 @@ fun main(args: Array<String>) {
             println("New Forename:")
             var forename = readln()
 
-            println("New surname:")
+            println("New Surname:")
             var surname = readln()
 
             println("New Phone number:")
